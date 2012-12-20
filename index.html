@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8" />
+	<title>DOK88</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="includes/base.css">
+	<link rel="stylesheet" href="includes/amazium.css">
+	<link rel="stylesheet" href="includes/layout.css">
+	
+	<!-- To Top scripts -->
+	<script src="includes/smoothscroll.js"type="text/javascript" ></script>
+	<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.js" type="text/javascript"></script>
+	<script src="includes/jquery.wmuSlider.min.js"></script>
+	<script type="text/javascript">
+
+
+		$(function() {
+		    // grab the initial top offset of the navigation 
+		    var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
+		     
+		    // our function that decides weather the navigation bar should have "fixed" css position or not.
+		    var sticky_navigation = function(){
+		        var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+		         
+		        // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+		        // otherwise change it back to relative
+		        if (scroll_top > 176) { 
+		            $('#sticky_navigation').css({ 'position': 'fixed'});
+		        } else {
+		            $('#sticky_navigation').css({ 'position': 'relative'}); 
+		        }   
+		    };
+		     
+		    // run our function on load
+		    sticky_navigation();
+		     
+		    // and run it again every time you scroll
+		    $(window).scroll(function() {
+		         sticky_navigation();
+		    });
+		 
+		});
+		
+	</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33686862-1']);
+_gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+</head>
+<body>
+
+<div class="row" id="logo">
+	<a name="home" class="normal clear block"></a>
+	<div class="grid_12">
+		<p>
+			<img src="images/logo.png" border="0" alt="blank image" class="hide-phone">
+			<img src="images/logo.png" width="200" border="0" alt="blank image" class="show-phone">
+		</p>
+		<div class="redline"></div>
+
+	</div>
+</div>
+
+<div class="row" id="sticky_navigation_container">
+	<div class="grid_12" id="sticky_navigation">
+
+ 		<ul class="main-navigation example1 hide-phone">
+			<li><a href="#" onclick="$('html, body').animate({scrollTop:0}, 1200, 'linear');">Intro</a></li>
+			<li><a href="#service">Diensten</a></li>
+			<li><a href="#transport">Transport</a></li>
+			<li><a href="#sloepverhuur">Sloepverhuur</a></li>
+			<li><a href="#winterstalling">Winterstalling</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+
+	</div>
+</div>
+<div class="row">
+
+	<div class="grid_6">
+		<h2>
+		Het is zomer!
+		</h2>
+		<p>Is uw boot er wel helemaal klaar voor?</p>
+		<p>Uw boot kom ik graag een <a href="#service">onderhoudsbeurt</a> geven.</p>
+		<p>Mochten er andere vragen zijn over bv <a href="#transport">transport</a>, <a href="#service">montage</a>, <a href="#service">inbouw</a> of <a href="#service">andere services</a>, dan verneem ik deze uiteraard graag van u.</p>
+	</div>
+	<div class="grid_6">
+		
+
+		<div class="wmuSlider set1">
+		    <div class="wmuSliderWrapper">
+		        <article>
+		          <a href="#transport"><img src="fotos/dok88_bus_aanhanger.jpg" /></a>
+		        </article>
+		        <article>
+		          <a href="#sloepverhuur"><img src="fotos/dok88_sloep_max.jpg" /></a>
+		        </article>
+		        <article>
+		           <a href="#winterstalling"><img src="fotos/dok88_winterstalling_loods.jpg" /></a>
+		        </article>
+		    </div>
+
+		</div>
+		<script>$('.set1').wmuSlider({
+		animation: 'slide',
+		animationDuration: 800,
+		slideshow: true,
+		slideshowSpeed: 7000,
+		slideToStart: 0,
+		navigationControl: true,
+		paginationControl: true,
+		previousText: 'Vorige',
+		nextText: 'Volgende',
+		touch: false,
+		slide: 'article',
+		items: 1}
+			);</script>
+
+	</div>	
+</div>
+
+
+
+
+
+<div class="row">
+	<a name="service" class="normal clear block"></a>
+	<div class="grid_12">
+		<hr />
+		<h1>Diensten</h1>
+		<p>
+			DOK88 geeft u graag zorgeloos vaarplezier door (periodiek) technisch onderhoud en/of cosmetisch onderhoud aan uw pleziervaartuig te verzorgen. Bijvoorbeeld:
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="grid_4">
+		<h3>Technisch onderhoud</h3>
+		<ul class="square">
+			<li>Oliefilters vervangen</li>
+			<li>Brandstoffilters vervangen</li>
+			<li>Smeerolie verversen</li>
+			<li>V-snaar vervangen</li>
+			<li>Impeller vervangen</li>
+			<li>Machinekamer up-to-date maken</li>
+		<ul>
+	</div>
+	<div class="grid_4">
+		<h3>Cosmetisch onderhoud</h3>
+		<ul class="square">
+			<li>Wassen van interieur en/of exterieur</li>
+			<li>Polijsten</li>
+			<li>Waxen</li>
+			<li>Teak reinigen en oli&euml;n</li>
+			<li>Lakwerkzaamheden</li>
+			<li>En alles wat u nog meer zou willen laten doen...</li>
+		<ul>
+	</div>
+
+	<div class="grid_4">
+		<h3>Montage en inbouw</h3>
+		<ul class="square">
+			<li>Audio/ Video</li>
+			<li>VHF-apparatuur</li>
+			<li>Toillet</li>
+			<li>Koelkast</li>
+			<li>Meerlijnen en stootranden op maat gemaakt</li>
+			<li>En nog veel meer...</li>
+		<ul>
+	</div>
+
+
+
+</div>
+
+<div class="row">
+	<a name="nautisch" class="normal clear block"></a>
+	<div class="grid_12">
+		<h2>Nautische diensten</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="grid_8">
+
+		<p>Voor het oplossen voor uw (tijdelijke) personeelstekort biedt ik u mijn "nautische diensten" aan.</p>
+		<p>Denk dan bijvoorbeeld aan:</p>
+		<ul class="square">
+			<li>Het opstarten in het hoogseizoen en/of winterklaar maken van uw jachthaven</li>
+			<li>Als nautische crew mee op uw evenementenschip</li>
+		</ul>
+
+		<p>Ik, Esli Njiokiktjien, ben in bezit van:</p>
+
+		<ul class="square">
+			<li>Dienstboekje matroos</li>
+			<li>CCV Diploma aspirant schipper</li>
+			<li>BHV</li>
+			<li>Rijbewijs B en E</li>
+		</ul>
+		
+	</div>
+<!-- 	<div class="grid_6">
+		<h2>Partners</h2>
+		<ul class="square">
+			<li>Rederij de Tijd</li>
+			<li>Pure Liner</li>
+			<li>Working on waves</li>
+			<li>J&amp;J nautical projects</li>
+			<li>Plevier watersport</li>
+			<li>Jachthaven Doorenbosch</li>
+			<li>Jachthaven den Hoek</li>
+			<li>Boei26</li>
+		</ul>
+	</div> -->
+	<div class="grid_4">
+		<img src="fotos/dok88_nautisch_stropdas.jpg" class="max-image" />
+	</div>	
+
+
+</div>
+
+
+<div class="row">
+	<div class="grid_12">
+		<p>
+			Benieuwd wat DOK88 voor u kan beteken? Neem dan <a href="#contact">contact</a> met ons op.
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<a name="transport" class="normal clear block"></a>
+	<div class="grid_12">
+		<hr />
+		<h1>Transport</h1>
+
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="grid_8">
+		<p>
+			Uw pleziervaartuig transporteren van de winterstalling naar de havenbox of vice versa? Of naar uw vakantiebestemming in Spanje? DOK88 heeft verschillende trailers, zo is het mogelijk om verschillende kielvormen te transporteren. Wij regelen het graag voor u!
+		</p>
+		<p>
+			DOK88 kan tot 3500 kg transporteren. Maar met onze relaties, is het tevens mogelijk om zwaarder transport te klaren.
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="grid_8">
+		<table>
+			<tr>
+				<th class="first last" colspan="3">Transport tot 2250 kg</th>
+			</tr>
+			<tr class="odd">
+				<th>Opstarttarief</th>
+				<td>laad/los- en trailerstelkosten</td>
+				<td>&euro; 80,00</td>
+			</tr>
+			<tr class="even">
+				<th>Kilometertarief</th>
+				<td>&euro; Maarssen &gt; ophaaladres, en v.v.</td>
+				<td>&euro; 0,40 per km</td>
+			</tr>
+			<tr class="odd">
+				<th>Wachturen</th>
+				<td>bv. kraan nog niet aanwezig of andere vertragingen</td>
+				<td>&euro; 35,00</td>
+			</tr>
+		</table>
+
+
+	</div>
+
+	<div class="grid_4">
+		<img src="fotos/dok88_boot_aanhanger.jpg" class="max-image" />
+	</div>
+
+</div>
+
+
+
+
+
+<div class="row">
+	<a name="sloepverhuur" class="normal clear block"></a>
+	<div class="grid_12">
+		<hr />
+		<h1>Sloepverhuur</h1>
+
+		<p>DOK88 verzorgt sloepverhuur.</p> 
+		<p>Sloep MAX wordt geschipperd verhuurd en is voor maximaal 12 personen.</p>
+	</div>
+</div>
+<div class="row">
+	<div class="grid_8">
+		<table>
+			<tr>
+				<th>Uren</th>
+				<th>Prijs incl. btw</th>
+				<th>Staffelkorting</th>
+			</tr>
+			<tr class="odd">
+				<td>1</td>
+				<td>&euro; 100,00</td>
+				<td></td>
+			</tr>
+			<tr class="even">
+				<td>2</td>
+				<td>&euro; 160,00</td>
+				<td></td>
+			</tr>
+			<tr class="odd">
+				<td>3</td>
+				<td>&euro; 220,00</td>
+				<td></td>
+			</tr>
+			<tr class="even">
+				<td>4</td>
+				<td><del>&euro; 280,00</del></td>
+				<td>&euro; 250,00</td>
+			</tr>
+			<tr class="odd">
+				<td>5</td>
+				<td><del>&euro; 340,00</del></td>
+				<td>&euro; 310,00</td>
+			</tr>
+			<tr class="even">
+				<td>6</td>
+				<td><del>&euro; 400,00</del></td>
+				<td>&euro; 370,00</td>
+			</tr>
+			<tr class="odd">
+				<td>7</td>
+				<td><del>&euro; 460,00</del></td>
+				<td>&euro; 400,00</td>
+			</tr>
+		</table>
+		<p>
+			<em>De prijzen zijn inclusief schipper, brandstof, bruggen- en sluisgelden.</em><br />
+			<em>Er van uit gaande dat u opstapt in Maarssen.</em><br />
+			<em>Elders opstappen kan uiteraard ook, maar dan worden er voorvaarkosten gerekend.</em><br />
+		</p>
+	</div>
+</div>	
+<div class="row">
+	<div class="grid_12">
+		<p>
+		Het is toegestaan om alle dranken en catering zelf te verzorgen, maar wij kunnen het ook voor u verzorgen. Wij maken graag een offerte voor u. 
+		Sloep MAX is een gerestaureerde en gemoderniseerde platbodem van omstreeks 1920. Deze sloep is uitermate geschikt voor een heerlijk dagje genieten op het water. Sloep MAX is voorzien van comfortabele kussens en biedt ruimte voor 12 personen (exclusief schipper). Eventueel is er mogelijkheid tot het creëren van een loungedek met plaats voor 6 personen. 
+		</p>
+
+		<p>
+		Met sloep MAX zult u alle mooie landgoederen zien langs de rivier de Vecht. De sloep past perfect in het vaargebied. Door zijn geringe doorvaarhoogte kan hij onder bijna alle bruggen door. Hierdoor zijn we niet afhankelijk van brugtijden.
+		</p>
+
+		<h3>Diverse arrangementen</h3>
+		<p>DOK88 organiseert voor u en uw gezelschap een actieve dag op de Loosdrechtse Plassen met wakeboard les.</p>
+
+
+	</div>
+</div>
+
+
+<div class="row">
+	<a name="winterstalling" class="normal clear block"></a>
+	<div class="grid_12">
+		<hr />
+		<h1>Winterstalling</h1>
+
+	</div>
+</div>
+<div class="row">
+	<div class="grid_8">
+		<table>
+			<tr>
+				<th class="first last" colspan="3">Overdekte winterstalling <strong>ALL INCLUSIVE</strong></th>
+			</tr>			
+			<tr class="odd">
+				<td>
+					<p><strong>Stalling per 2m (l.o.a. x b.o.a.)</strong></p>
+
+					<p>Het tarief is inclusief:</p>
+					<ul class="circle">
+						<li>19% btw</li>
+						<li>Schoonspuiten van onderwaterschip (normale vervuiling)</li>
+						<li>Transport van en naar stalling (binnen een straal van 15 km om Maarssen en tot 2250 kg)</li>
+						<li>Huur bootbok tot 9 meter bootlengte</li>
+						<li>Milieutoeslag</li>
+					</ul>
+				</td>
+				<td class="euro"><nobr>&euro; 47,50</nobr></td>
+			</tr>		
+		</table>
+
+
+
+	</div>
+
+	<div class="grid_4">
+		<img src="fotos/dok88_winterstalling_stapel.jpg" class="max-image" />
+	</div>	
+</div>	
+
+<div class="row">
+	<div class="grid_8">
+		<table>
+			<tr>
+				<th class="first last" colspan="3">Winterklaar maken</th>
+			</tr>			
+			<tr class="odd">
+				<td>
+					Inboard motoren incl. benodigdheden vanaf:
+				</td>
+				<td class="euro"><nobr>&euro; 75,00</nobr></td>
+			</tr>	
+			<tr class="even">
+				<td>
+					Drinkwatersystemen incl. benodigdheden vanaf:
+				</td>
+				<td class="euro"><nobr>&euro; 50,00</nobr></td>
+			</tr>	
+		</table>
+
+		<p>
+			Graag verzorgen wij in de winterstalling:
+		</p>
+		<ul class="square">
+			<li>Servicebeurten aan motoren</li>
+			<li>Polijsten en poetsen van polyester</li>
+			<li>Aanbrengen van antifouling</li>
+			<li>Installatie van randapperatuur</li> 
+		</ul>
+	</div>	
+	<div class="grid_4">
+		<img src="fotos/dok88_winterstalling_stapel2.jpg" class="max-image" />
+	</div>	
+
+
+</div>	
+
+
+<div class="row">
+	<a name="contact" class="normal clear block"></a>
+	<div class="grid_12">
+		<hr />
+		<h1>Contact</h1>
+	</div>
+</div>	
+
+<div class="row">
+	<div class="grid_6">
+
+		<h3>Esli Njiokiktjien</h3>
+
+		<table class="contact">
+		<tr>
+			<td><strong class="water">W</strong>ebsite</td>
+			<td><a href="http://www.dok88.nl">dok88.nl</a></td>
+		</tr>
+
+		<tr>
+			<td><strong class="water">A</strong>dres</td>
+			<td>Zandpad 6 w.s.<br />3601 AN MAARSSEN</td>
+		</tr>
+
+		<tr>
+			<td><strong class="water">T</strong>elefoon</td>
+			<td>06-40111855</td>
+		</tr>
+
+		<tr>
+			<td><strong class="water">E</strong>-mail</td>
+			<td><a href="mailto:info@dok88.nl">info@dok88.nl</a></td>
+		</tr>
+
+		<tr>
+			<td><strong class="water">R</strong>ekeningnr.</td>
+			<td>ING: 4802548</td>
+		</tr>
+
+		</table>
+	</div>
+	<div class="grid_4 offset_2">
+		<img src="fotos/dok88_elsi.jpg" class="max-image" />
+
+	</div>
+</div>
+
+
+</body>
+</html>

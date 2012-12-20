@@ -1,0 +1,205 @@
+/* 
+* Amazium V1.0.0
+* Copyright 2011, Mike Ballan
+* www.amazium.co.uk
+*/
+
+
+/* mwuSlider */
+.wmuSlider {
+    position: relative;
+    overflow: hidden;
+}
+.wmuSlider .wmuSliderWrapper {
+    display: none;
+}
+.wmuSlider .wmuSliderWrapper article {
+    position: relative;
+    text-align: center;
+}
+.wmuSlider .wmuSliderWrapper article img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* mwuGallery */
+.wmuGallery .wmuGalleryImage {
+    position: relative;
+    text-align: center;
+}
+.wmuGallery .wmuGalleryImage img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Default Skin */
+.wmuGallery .wmuGalleryImage {
+    margin-bottom: 10px;
+}
+.wmuSliderPrev, .wmuSliderNext {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    text-indent: -9999px;
+    background: url(../images/sprites.png) no-repeat 0 0;
+    top: 50%;
+    margin-top: -40px;
+    z-index: 2;
+}
+.wmuSliderPrev {
+    background-position: 100% 0;
+    left: 20px;
+}
+.wmuSliderNext {
+    right: 20px;
+}
+.wmuSliderPagination {
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+.wmuSliderPagination li {
+    float: left;
+    margin: 0 5px 0 0;
+    list-style-type: none;
+}
+.wmuSliderPagination a {
+    display: block;
+    text-indent: -9999px;
+    width: 10px;
+    height: 10px;
+    background: url(../images/sprites.png) no-repeat 0 -80px;
+}
+.wmuSliderPagination a.wmuActive {
+    background-position: -10px -80px;
+}
+
+
+.img-border  {
+border: 1px solid #334c64;
+}
+
+td.euro {width: 60px; text-align: right;}
+
+
+table.contact                                   { margin:0 0 20px 0; width:100%; background:none;}
+table.contact td                                { padding:5px 8px 5px 8px; background:none; border:none; }
+strong.water {font-family: 'BankGothicMdBTMedium'; font-size:18px; list-style:none; text-transform:none;}
+
+
+
+#sticky_navigation_container {height:60px;}
+#sticky_navigation { position:relative; top:0; margin-top:0px; z-index:100;}
+
+
+.example1 {
+box-shadow: 0px 16px 10px -10px #f4f4f4;
+-webkit-box-shadow: 0px 0px 30px 0px #f4f4f4;
+-moz-box-shadow: 0px 16px 10px -10px #f4f4f4;
+}
+
+
+/***** Standard 960px *****/
+
+
+.header									{ position:fixed; top: 0; }
+
+.main-navigation 						{ margin:0 0 40px 0; padding:0; font-family: 'BankGothicMdBTMedium'; font-size:14px; list-style:none; float:left; text-transform:uppercase; text-align:left;width:100%; background-color:#334c64; }
+.main-navigation li 					{ margin:0 30px 0 5px; display:inline; }
+.main-navigation a 						{ padding:0 0 3px 0; text-decoration:none; line-height:30px; color:#f4f4f4;}
+.main-navigation a:hover 				{ padding:0 0 3px 0; border-bottom:5px solid #bac2c9; text-decoration:none; line-height:27px; color:#bac2c9; }
+.main-navigation .current a 			{ padding:0 0 3px 0; border-bottom:5px solid #bac2c9; text-decoration:none; line-height:27px; color:#f4f4f4; }
+
+
+
+.redline 						{ margin:1px 0 3px 0; padding:0; border-bottom:3px solid #d62027; border-radius:1px; -webkit-border-radius:1px; -moz-border-radius:1px;}
+
+
+.example								{ margin:0; padding:0; }
+
+
+
+/***** Bigger than 960px *****/
+@media (min-width: 1200px) {
+
+.example								{ margin:0; padding:0; }
+
+}
+
+
+
+/***** iPad Smaller than 959px *****/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+.example								{ margin:0; padding:0; }	
+.main-navigation li 					{ margin:0 10px 0 0; display:inline; }
+
+.wrapper-block [type="text"],
+.wrapper-block textarea					{ width:140px; }
+
+.download-icon img						{ width:88px; height:88px; }
+
+}
+
+
+
+
+
+/***** iPhone (portrait 300px) *****/
+@media only screen and (max-width: 767px) {
+
+.example								{ margin:0; padding:0; }
+.main-navigation						{ border:none; }
+.main-navigation li 					{ width:300px; display:inline-block; border-bottom:1px solid #324c64; }
+.main-navigation a						{ padding:0 0 2px 0; display: inline-block; width:300px; }
+.main-navigation a:hover,
+.main-navigation .current a				{ padding:0; display: inline-block; width:300px; }
+
+.wrapper-block label 					{ text-align:left; width:300px; }
+.wrapper-block [type="text"]			{ width:250px; margin:2px 0 15px 0; }
+.wrapper-block select					{ margin:2px 0 15px 0; }
+.wrapper-block [type="radio"]			{ margin:0 2px 15px 0; }
+.wrapper-block [type="checkbox"]		{ margin:0 2px 15px 0; }
+.wrapper-block textarea					{ width:200px; margin:2px 0 15px 0; }
+
+a.btn-form, input.btn-form				{ margin:5px 0 5px 0; }
+a.btn-download, .btn-download 			{ float:left; }
+
+.test1 {width:300px;}
+}
+
+
+	
+/***** iPhone (landscape 420px) *****/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+.example								{ margin:0; padding:0; }
+
+.main-navigation li 					{ width:420px; }
+.main-navigation a						{ width:420px; }
+.main-navigation a:hover,
+.main-navigation .current a				{ width:420px; }
+.test1 {width:500px;}
+
+.wrapper-block label 					{ padding:0; display:block; font-weight:bold; text-align:right; width:140px; float:left; }
+.wrapper-block [type="text"]			{ font-size:12px; padding:4px 2px; border:solid 1px #bbbbbb; width:200px; margin:2px 0 15px 10px; }
+.wrapper-block select					{ font-size:12px; padding:2px; border:solid 1px #bbbbbb; margin:2px 0 15px 10px; }
+.wrapper-block [type="radio"]			{ line-height:16px; margin:0 2px 15px 10px; }
+.wrapper-block [type="checkbox"]		{ line-height:16px; margin:0 2px 15px 10px; }
+.wrapper-block textarea					{ padding:4px 2px; border:solid 1px #bbbbbb; width:200px; margin:2px 0 15px 10px; font:12px "Century Gothic", "Trebuchet MS", Helvetica, sans-serif; }
+
+a.btn-form, input.btn-form				{ margin:5px 0 5px 150px; padding:4px 28px 4px 8px; display:inline-block; font-size:11px; color:#fff; border:1px solid #444; background:#333 url(../images/btn-arrow.png) no-repeat right; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; cursor:pointer; 
+
+}
+
+
+
+/***** Retina *****/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+.example								{ margin:0; padding:0; }
+
+}

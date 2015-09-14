@@ -57,7 +57,7 @@
 
 
 
-       var calcUrl = "http://heroku.dok88.nl/dok88/";
+      var calcUrl = "http://leanderweb.nl/dok88/";
       $.ajax({
               type: "HEAD",
               async: true,
@@ -87,17 +87,31 @@
           $('#loa').autoNumeric('init', {aSep: '.', aDec: ','});
           $('#boa').autoNumeric('init', {aSep: '.', aDec: ','});
           $('#total').autoNumeric('init', {aSep: '.', aDec: ','});
+          
+          $('#accus').autoNumeric('init', {aSep: '.', aDec: ',', aPad: false});
 
 
           $("#winterform").validate({
             rules: {
+              name: {
+                required: true
+              },
+              address: {
+                required: true
+              },
+              postcode: {
+                required: true
+              },
               email: {
                 required: true,
                 email: true
               }
             },
             messages: {
-              email: "Vergeet je e-mail niet!"
+              email: " Vergeet deze niet",
+              name: " Vergeet deze niet",
+              address: " Vergeet deze niet",
+              postcode: " Vergeet deze niet"
             }
           });
 
@@ -122,16 +136,50 @@
             calc();
         });    
 
+        $("#wintercheck").change(function(){
+            calc();
+        });  
+
+        $("#accucheck").change(function(){
+            calc();
+        });  
+
+        $("#accus").keyup(function(){
+            calc();
+        });   
 
         var calc = function() {
           var loa = $("#loa").autoNumeric('get');
           var boa = $("#boa").autoNumeric('get');
 
+          var total = 0;
 
           if (loa > 0 && boa > 0)
           {
-            var total = loa * boa * 49.95
+            var wintercheck = $("#wintercheck");
+            var accucheck = $("#accucheck");
+
+            total = loa * boa * 49.95
+
+            if (wintercheck.is(':checked')) {
+              total = total + 75
+            }
+
+            if (accucheck.is(':checked')) {
+              total = total + (25 * $("#accus").autoNumeric('get'));
+              $("#accunum").slideDown("slow", function() {
+                          // Animation complete.
+                        });
+            }
+            else {
+              $("#accus").autoNumeric('set', 0);
+              $("#accunum").slideUp("slow", function() {
+                          // Animation complete.
+                        });
+            }
+
             $("#total").autoNumeric('set', total);
+            $('input[name=totalcalc]').val(total)
             $("#clickme").show()
           }
 
@@ -173,8 +221,8 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
   <a name="home" class="normal clear block"></a>
   <div class="grid_12">
     <p>
-      <img src="images/logo.png" border="0" alt="blank image" class="hide-phone">
-      <img src="images/logo.png" width="200" border="0" alt="blank image" class="show-phone">
+      <xximg src="images/logo.png" border="0" alt="blank image" class="hide-phone">
+      <xximg src="images/logo.png" width="200" border="0" alt="blank image" class="show-phone">
     </p>
     <div class="redline"></div>
 
@@ -212,16 +260,16 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     <div class="wmuSlider set1">
         <div class="wmuSliderWrapper">
             <article>
-              <a href="#transport"><img src="fotos/dok88_bus_aanhanger.jpg" /></a>
+              <a href="#transport"><xximg src="fotos/dok88_bus_aanhanger.jpg" /></a>
             </article>
             <article>
-              <a href="#sloepverhuur"><img src="fotos/dok88_sloep_max.jpg" /></a>
+              <a href="#sloepverhuur"><xximg src="fotos/dok88_sloep_max.jpg" /></a>
             </article>
             <article>
-               <a href="#winterstalling"><img src="fotos/dok88_winterstalling_loods.jpg" /></a>
+               <a href="#winterstalling"><xximg src="fotos/dok88_winterstalling_loods.jpg" /></a>
             </article>
             <article>
-               <a href="#service"><img src="fotos/dok88_vetus_motor.jpg" /></a>
+               <a href="#service"><xximg src="fotos/dok88_vetus_motor.jpg" /></a>
             </article>            
         </div>
 
@@ -340,7 +388,7 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     </ul>
   </div> -->
   <div class="grid_4">
-    <img src="fotos/dok88_nautisch_stropdas.jpg" class="max-image" />
+    <xximg src="fotos/dok88_nautisch_stropdas.jpg" class="max-image" />
   </div>  
 
 
@@ -404,7 +452,7 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
   </div>
 
   <div class="grid_4">
-    <img src="fotos/dok88_boot_aanhanger.jpg" class="max-image" />
+    <xximg src="fotos/dok88_boot_aanhanger.jpg" class="max-image" />
   </div>
 
 </div>
@@ -479,10 +527,10 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     <div class="wmuSlider set2">
         <div class="wmuSliderWrapper">
             <article>
-              <img src="fotos/dok88_sloepverhuur_3607.jpg" />
+              <xximg src="fotos/dok88_sloepverhuur_3607.jpg" />
             </article>
             <article>
-              <img src="fotos/dok88_sloepverhuur_3642.jpg" />
+              <xximg src="fotos/dok88_sloepverhuur_3642.jpg" />
             </article>          
         </div>
 
@@ -572,6 +620,7 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
 
 
   <form id="winterform" method="post" action="">
+    <input type="hidden" name="totalcalc" id="totalcalc" value="" />
     <table>
       <tr>
         <th class="first last" colspan="3">Overdekte winterstalling <strong>ALL INCLUSIVE</strong></th>
@@ -591,6 +640,28 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
       <input type="text" name="width" class="small" id="boa" data-a-dec="," data-a-sep="."> meter
       </div>
 
+      <br />
+
+      <div>
+        <input type="checkbox" name="wintercheck" id="wintercheck" value="ja" />
+        <span class="label2">Winterklaar maken</span>
+      </div>
+      
+
+      <div>
+        <input type="checkbox" name="accucheck" id="accucheck" value="ja" />
+        <span class="label2">Accuservice</span>
+
+      </div>
+            <br />
+      <div id="accunum" style="display:none;">
+      <span class="label bold">Aantal accu's</span>
+      <input type="text" name="width" class="small" name="accus" id="accus" data-a-dec="," data-a-sep=".">
+      </div>
+      
+      <br />
+
+
       
       <div class="orderButton">
         <button class="cancel" id="clickme" style="display:none;">Offerte aanvragen!</button>
@@ -605,19 +676,19 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
       <div id="orderfields">
 
         <div>
-          <input type="checkbox" name="optie1" />
-          <span class="label2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+          <span class="label">Naam *</span>
+          <input type="text" name="name">
         </div>
 
         <div>
-          <input type="checkbox" name="optie2" />
-          <span class="label2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+          <span class="label">Adres *</span>
+          <input type="text" name="address">
         </div>
-        <br />
+
         <div>
-          <span class="label">Naam</span>
-          <input type="text" name="name">
-        </div>
+          <span class="label">Postcode *</span>
+          <input type="text" name="postcode">
+        </div>        
 
         <div>
           <span class="label">E-mailadres *</span>
@@ -653,10 +724,10 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     <div class="wmuSlider set3">
         <div class="wmuSliderWrapper">
             <article>
-              <img src="fotos/dok88_winterstalling_17.jpg" />
+              <xximg src="fotos/dok88_winterstalling_17.jpg" />
             </article>
             <article>
-              <img src="fotos/dok88_winterstalling_20.jpg" />
+              <xximg src="fotos/dok88_winterstalling_20.jpg" />
             </article>          
         </div>
 
@@ -746,7 +817,7 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     Alle genoemde prijzen zijn incl. 21% BTW.
   </div>  
 <!--  <div class="grid_6">
-    <img src="fotos/dok88_winterstalling_stapel2.jpg" class="max-image" />
+    <xximg src="fotos/dok88_winterstalling_stapel2.jpg" class="max-image" />
   </div>   -->
 
 
@@ -795,7 +866,7 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
     </table>
   </div>
   <div class="grid_4 offset_2">
-    <img src="fotos/dok88_elsi.jpg" class="max-image" />
+    <xximg src="fotos/dok88_elsi.jpg" class="max-image" />
 
   </div>
 </div>

@@ -1,167 +1,287 @@
 <!doctype html>
 <html lang="nl">
 <head>
-	<meta charset="utf-8" />
-	<title>DOK88</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href="includes/base.css">
-	<link rel="stylesheet" href="includes/amazium.css">
-	<link rel="stylesheet" href="includes/layout.css">
-	
-	<!-- To Top scripts -->
-	<script src="includes/smoothscroll.js"type="text/javascript" ></script>
-	<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.js" type="text/javascript"></script>
-	<script src="includes/jquery.wmuSlider.min.js"></script>
-	<script type="text/javascript">
+  <meta charset="utf-8" />
+  <title>DOK88</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="includes/base.css">
+  <link rel="stylesheet" href="includes/amazium.css">
+  <link rel="stylesheet" href="includes/layout.css">
 
-
-		$(function() {
-		    // grab the initial top offset of the navigation 
-		    var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
-		     
-		    // our function that decides weather the navigation bar should have "fixed" css position or not.
-		    var sticky_navigation = function(){
-		        var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-		         
-		        // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-		        // otherwise change it back to relative
-		        if (scroll_top > 176) { 
-		            $('#sticky_navigation').css({ 'position': 'fixed'});
-		        } else {
-		            $('#sticky_navigation').css({ 'position': 'relative'}); 
-		        }   
-		    };
-		     
-		    // run our function on load
-		    sticky_navigation();
-		     
-		    // and run it again every time you scroll
-		    $(window).scroll(function() {
-		         sticky_navigation();
-		    });
-		 
-		});
-		
+	<script>
+	var _rollbarConfig = {
+	    accessToken: "fceee2fb31a64a63ae9cab7dcbd850e8",
+	    captureUncaught: true,
+	    payload: {
+	        environment: "production"
+	    }
+	};
+	!function(r){function t(o){if(e[o])return e[o].exports;var n=e[o]={exports:{},id:o,loaded:!1};return r[o].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var e={};return t.m=r,t.c=e,t.p="",t(0)}([function(r,t,e){"use strict";var o=e(1).Rollbar,n=e(2),a="https://d37gvrvc0wt4s1.cloudfront.net/js/v1.6/rollbar.min.js";_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||a;var i=o.init(window,_rollbarConfig),l=n(i,_rollbarConfig);i.loadFull(window,document,!1,_rollbarConfig,l)},function(r,t){"use strict";function e(){var r=window.console;r&&"function"==typeof r.log&&r.log.apply(r,arguments)}function o(r,t){return t=t||e,function(){try{return r.apply(this,arguments)}catch(e){t("Rollbar internal error:",e)}}}function n(r,t,e){window._rollbarWrappedError&&(e[4]||(e[4]=window._rollbarWrappedError),e[5]||(e[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,e),t&&t.apply(window,e)}function a(r){this.shimId=++u,this.notifier=null,this.parentShim=r,this.logger=e,this._rollbarOldOnError=null}function i(r){var t=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var e=this,o="scope"===r;o&&(e=new t(this));var n=Array.prototype.slice.call(arguments,0),a={shim:e,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),o?e:void 0})}function l(r,t){if(t.hasOwnProperty&&t.hasOwnProperty("addEventListener")){var e=t.addEventListener;t.addEventListener=function(t,o,n){e.call(this,t,r.wrap(o),n)};var o=t.removeEventListener;t.removeEventListener=function(r,t,e){o.call(this,r,t&&t._wrapped?t._wrapped:t,e)}}}var u=0;a.init=function(r,t){var e=t.globalAlias||"Rollbar";if("object"==typeof r[e])return r[e];r._rollbarShimQueue=[],r._rollbarWrappedError=null,t=t||{};var i=new a;return o(function(){if(i.configure(t),t.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=function(){var r=Array.prototype.slice.call(arguments,0);n(i,i._rollbarOldOnError,r)};var o,a,u="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<u.length;++o)a=u[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return r[e]=i,i},i.logger)()},a.prototype.loadFull=function(r,t,e,n,a){var i=function(){var t;if(void 0===r._rollbarPayloadQueue){var e,o,n,i;for(t=new Error("rollbar.js did not load");e=r._rollbarShimQueue.shift();)for(n=e.args,i=0;i<n.length;++i)if(o=n[i],"function"==typeof o){o(t);break}}"function"==typeof a&&a(t)},l=!1,u=t.createElement("script"),s=t.getElementsByTagName("script")[0],p=s.parentNode;u.src=n.rollbarJsUrl,u.async=!e,u.onload=u.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){u.onload=u.onreadystatechange=null;try{p.removeChild(u)}catch(r){}l=!0,i()}},this.logger),p.insertBefore(u,s)},a.prototype.wrap=function(r,t){try{var e;if(e="function"==typeof t?t:function(){return t||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(t){throw t._rollbarContext=e()||{},t._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=t,t}},r._wrapped._isWrap=!0;for(var o in r)r.hasOwnProperty(o)&&(r._wrapped[o]=r[o])}return r._wrapped}catch(n){return r}};for(var s="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError".split(","),p=0;p<s.length;++p)a.prototype[s[p]]=i(s[p]);r.exports={Rollbar:a,_rollbarWindowOnError:n}},function(r,t){"use strict";r.exports=function(r,t){return function(e){if(!e&&!window._rollbarInitialized){var o=window.RollbarNotifier,n=t||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,o.processPayloads()}}}}]);
 	</script>
 
-<script type="text/javascript">
+  <!-- To Top scripts -->
+  <script src="includes/smoothscroll.js" type="text/javascript" ></script>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33686862-1']);
-_gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  
+  <script type="text/javascript" src="includes/autoNumeric.js"></script>  
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+  <script src="includes/jquery.wmuSlider.min.js"></script>
+  <script type="text/javascript">
 
-</script>
-	
+
+    $(function() {
+        // grab the initial top offset of the navigation 
+        var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
+         
+        // our function that decides weather the navigation bar should have "fixed" css position or not.
+        var sticky_navigation = function(){
+            var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+             
+            // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+            // otherwise change it back to relative
+            if (scroll_top > 176) { 
+                $('#sticky_navigation').css({ 'position': 'fixed'});
+            } else {
+                $('#sticky_navigation').css({ 'position': 'relative'}); 
+            }   
+        };
+         
+        // run our function on load
+        sticky_navigation();
+         
+        // and run it again every time you scroll
+        $(window).scroll(function() {
+             sticky_navigation();
+        });
+
+
+
+      var calcUrl = "http://leanderweb.nl/dok88/";
+
+          thankyou = function() {
+            $('<div class="thanksalot">Bedankt!</div>').appendTo($("#orderfields"));
+          }
+
+          SubmittingForm = function(form) {
+              if ($(form).find("#email").val() != "")
+              {
+                var inputs = $("#winterform").find("input, select, button, textarea, checkbox");
+                var formData = $("#winterform").serialize();
+
+                inputs.prop("disabled", true);
+
+                $.post(calcUrl, formData)
+                  .done(function(data) {thankyou();})
+                  .always(function() { inputs.prop("disabled", false); })
+                ;
+              }
+
+          }
+
+          $('#loa').autoNumeric('init', {aSep: '.', aDec: ','});
+          $('#boa').autoNumeric('init', {aSep: '.', aDec: ','});
+          $('#total').autoNumeric('init', {aSep: '.', aDec: ','});
+          
+          $('#accus').autoNumeric('init', {aSep: '.', aDec: ',', aPad: false});
+
+
+          $("#winterform").validate({
+            rules: {
+              name: {
+                required: true
+              },
+              address: {
+                required: true
+              },
+              postcode: {
+                required: true
+              },
+              email: {
+                required: true,
+                email: true
+              }
+            },
+            messages: {
+              email: " Vergeet deze niet",
+              name: " Vergeet deze niet",
+              address: " Vergeet deze niet",
+              postcode: " Vergeet deze niet"
+            }
+          });
+
+
+
+        $("#sendit").click(function(e) {
+            e.preventDefault();
+            if($("#winterform").valid()){
+                // the form is valid, do something
+                SubmittingForm(e);
+            } else{
+                // the form is invalid
+            }
+        });
+
+
+        $("#loa").keyup(function(){
+            calc();
+        });
+
+        $("#boa").keyup(function(){
+            calc();
+        });    
+
+        $("#wintercheck").change(function(){
+            calc();
+        });  
+
+        $("#accucheck").change(function(){
+            calc();
+        });  
+
+        $("#accus").keyup(function(){
+            calc();
+        });   
+
+        var calc = function() {
+          var loa = $("#loa").autoNumeric('get');
+          var boa = $("#boa").autoNumeric('get');
+
+          var total = 0;
+
+          if (loa > 0 && boa > 0)
+          {
+            var wintercheck = $("#wintercheck");
+            var accucheck = $("#accucheck");
+
+            total = loa * boa * 49.95
+
+            if (wintercheck.is(':checked')) {
+              total = total + 75
+            }
+
+            if (accucheck.is(':checked')) {
+              total = total + (25 * $("#accus").autoNumeric('get'));
+              $("#accunum").slideDown("slow", function() {
+                          // Animation complete.
+                        });
+            }
+            else {
+              $("#accus").autoNumeric('set', 0);
+              $("#accunum").slideUp("slow", function() {
+                          // Animation complete.
+                        });
+            }
+
+            $("#total").autoNumeric('set', total);
+            $('input[name=totalcalc]').val(total)
+            $("#clickme").show()
+          }
+
+          
+        }
+
+
+        $("#clickme").click(function(e) {
+          e.preventDefault();
+          $("#contactform").slideDown("slow", function() {
+            // Animation complete.
+          });
+        });
+
+        calc();       
+     
+    });
+    
+  </script>
+
 </head>
 <body>
 
 <div class="row" id="logo">
-	<a name="home" class="normal clear block"></a>
-	<div class="grid_12">
-		<p>
-			<img src="images/logo.png" border="0" alt="DOK88" class="hide-phone">
-			<img src="images/logo.png" width="200" border="0" alt="DOK88" class="show-phone">
-		</p>
-		<div class="redline"></div>
+  <a name="home" class="normal clear block"></a>
+  <div class="grid_12">
+    <p>
+      <img src="images/logo.png" border="0" alt="blank image" class="hide-phone">
+      <img src="images/logo.png" width="200" border="0" alt="blank image" class="show-phone">
+    </p>
+    <div class="redline"></div>
 
-	</div>
+  </div>
 </div>
 
 <div class="row" id="sticky_navigation_container">
-	<div class="grid_12" id="sticky_navigation">
+  <div class="grid_12" id="sticky_navigation">
 
- 		<ul class="main-navigation example1 hide-phone">
-			<li><a href="#" onclick="$('html, body').animate({scrollTop:0}, 1200, 'linear');">Intro</a></li>
-			<li><a href="#service">Diensten</a></li>
-			<li><a href="#transport">Transport</a></li>
-			<li><a href="#sloepverhuur">Sloepverhuur</a></li>
-			<li><a href="#winterstalling">Winterstalling</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
+    <ul class="main-navigation example1 hide-phone">
+      <li><a href="#" onclick="$('html, body').animate({scrollTop:0}, 1200, 'linear');">Intro</a></li>
+      <li><a href="#service">Diensten</a></li>
+      <li><a href="#transport">Transport</a></li>
+      <li><a href="#sloepverhuur">Sloepverhuur</a></li>
+      <li><a href="#winterstalling">Winterstalling</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-	</div>
+  </div>
 </div>
 <div class="row">
 
-	<div class="grid_6">
-		<h2>
-		Iedereen wil varen deze lente! U ook?
-		</h2>
-		<p>
-			Huur de geschipperde sloep bij DOK88, zodat u ook kunt genieten op het water!
-			Zorgeloos varen op de Vecht, door de grachten van Utrecht, op de Vinkeveense- of Loosdrechtse Plassen. Ook mogelijk met een watersport activiteit ernaast.
-		<p>
+  <div class="grid_6">
+    <h2>
+    Koning Winter staat weer voor de deur!
+    </h2>
 
-		<p>
-			Afhuren van luxe Sloep Max met schipper: &euro; 375,00
-		</p>		
-		
-		<!-- <p>Ook voor <a href="#service">onderhoud</a>, <a href="#transport">transport</a>, <a href="#service">montage</a>, <a href="#service">inbouw</a> of <a href="#service">andere nautische services zoals sloepverhuur</a> kunt u contact opnemen met DOK88.</p> -->
+    <p>Is uw boot al helemaal klaar voor de kou? Zet hem binnen in de stalling bij DOK88!</p>
+    <p>Het is verstandig om uw motor en evt. drinkwatersysteem winterklaar te laten maken en gebruik te maken van onze accu service.</p>
+    <p>Mochten er andere vragen zijn over bv <a href="#service">onderhoud</a>, <a href="#transport">transport</a>, <a href="#service">montage</a>, <a href="#service">inbouw</a> of <a href="#service">andere services</a>, dan kunt u contact opnemen met DOK88.</p>
+  </div>
+  <div class="grid_6">
+    
 
-	</div>
-	<div class="grid_6">
-		
+    <div class="wmuSlider set1">
+        <div class="wmuSliderWrapper">
+            <article>
+              <a href="#transport"><img src="fotos/dok88_bus_aanhanger.jpg" /></a>
+            </article>
+            <article>
+              <a href="#sloepverhuur"><img src="fotos/dok88_sloep_max.jpg" /></a>
+            </article>
+            <article>
+               <a href="#winterstalling"><img src="fotos/dok88_winterstalling_loods.jpg" /></a>
+            </article>
+            <article>
+               <a href="#service"><img src="fotos/dok88_vetus_motor.jpg" /></a>
+            </article>            
+        </div>
 
-		<div class="wmuSlider set1">
-		    <div class="wmuSliderWrapper">
-		        <article>
-		          <a href="#transport"><img src="fotos/dok88_bus_aanhanger.jpg" /></a>
-		        </article>
-		        <article>
-		          <a href="#sloepverhuur"><img src="fotos/dok88_sloep_max.jpg" /></a>
-		        </article>
-		        <article>
-		           <a href="#winterstalling"><img src="fotos/dok88_winterstalling_loods.jpg" /></a>
-		        </article>
-		        <article>
-		           <a href="#service"><img src="fotos/dok88_vetus_motor.jpg" /></a>
-		        </article>
-		        <article>
-		           <a href="#service"><img src="fotos/dok88_handwerk.jpg" /></a>
-		        </article>	
-		        <article>
-		           <a href="#service"><img src="fotos/dok88_loods_buiten.jpg" /></a>
-		        </article>	
-		        <article>
-		           <a href="#service"><img src="fotos/dok88_takel.jpg" /></a>
-		        </article>	
-		        <article>
-		           <a href="#service"><img src="fotos/dok88_pechhulp.jpg" /></a>
-		        </article>		        
-		    </div>
+    </div>
+    <script>$('.set1').wmuSlider({
+    animation: 'slide',
+    animationDuration: 800,
+    slideshow: true,
+    slideshowSpeed: 7000,
+    slideToStart: 0,
+    navigationControl: true,
+    paginationControl: true,
+    previousText: 'Vorige',
+    nextText: 'Volgende',
+    touch: false,
+    slide: 'article',
+    items: 1}
+      );</script>
 
-		</div>
-		<script>$('.set1').wmuSlider({
-		animation: 'slide',
-		animationDuration: 800,
-		slideshow: true,
-		slideshowSpeed: 7000,
-		slideToStart: 0,
-		navigationControl: true,
-		paginationControl: true,
-		previousText: 'Vorige',
-		nextText: 'Volgende',
-		touch: false,
-		slide: 'article',
-		items: 1}
-			);</script>
-
-	</div>	
+  </div>  
 </div>
 
 
@@ -169,201 +289,163 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
 
 
 <div class="row">
-	<a name="service" class="normal clear block"></a>
-	<div class="grid_12">
-		<hr />
-		<h1>Diensten</h1>
-		<p>
-			DOK88 geeft u graag zorgeloos vaarplezier door (periodiek) technisch onderhoud en/of cosmetisch onderhoud aan uw pleziervaartuig te verzorgen. Bijvoorbeeld:
-		</p>
-	</div>
+  <a name="service" class="normal clear block"></a>
+  <div class="grid_12">
+    <hr />
+    <h1>Diensten</h1>
+    <p>
+      DOK88 geeft u graag zorgeloos vaarplezier door (periodiek) technisch onderhoud en/of cosmetisch onderhoud aan uw pleziervaartuig te verzorgen. Bijvoorbeeld:
+    </p>
+  </div>
 </div>
 
 <div class="row">
-	<div class="grid_4">
-		<h3>Technisch onderhoud</h3>
-		<ul class="square">
-			<li>Oliefilters vervangen</li>
-			<li>Brandstoffilters vervangen</li>
-			<li>Smeerolie verversen</li>
-			<li>V-snaar vervangen</li>
-			<li>Impeller vervangen</li>
-			<li>Machinekamer up-to-date maken</li>
-		<ul>
-	</div>
-	<div class="grid_4">
-		<h3>Cosmetisch onderhoud</h3>
-		<ul class="square">
-			<li>Wassen van interieur en/of exterieur</li>
-			<li>Polijsten</li>
-			<li>Waxen</li>
-			<li>Teak reinigen en oli&euml;n</li>
-			<li>Lakwerkzaamheden</li>
-			<li>En alles wat u nog meer zou willen laten doen...</li>
-		<ul>
-	</div>
+  <div class="grid_4">
+    <h3>Technisch onderhoud</h3>
+    <ul class="square">
+      <li>Oliefilters vervangen</li>
+      <li>Brandstoffilters vervangen</li>
+      <li>Smeerolie verversen</li>
+      <li>V-snaar vervangen</li>
+      <li>Impeller vervangen</li>
+      <li>Machinekamer up-to-date maken</li>
+    <ul>
+  </div>
+  <div class="grid_4">
+    <h3>Cosmetisch onderhoud</h3>
+    <ul class="square">
+      <li>Wassen van interieur en/of exterieur</li>
+      <li>Polijsten</li>
+      <li>Waxen</li>
+      <li>Teak reinigen en oli&euml;n</li>
+      <li>Lakwerkzaamheden</li>
+      <li>En alles wat u nog meer zou willen laten doen...</li>
+    <ul>
+  </div>
 
-	<div class="grid_4">
-		<h3>Montage en inbouw</h3>
-		<ul class="square">
-			<li>Audio/ Video</li>
-			<li>VHF-apparatuur</li>
-			<li>Toillet</li>
-			<li>Koelkast</li>
-			<li>Meerlijnen en stootranden op maat gemaakt</li>
-			<li>En nog veel meer...</li>
-		<ul>
-	</div>
+  <div class="grid_4">
+    <h3>Montage en inbouw</h3>
+    <ul class="square">
+      <li>Audio/ Video</li>
+      <li>VHF-apparatuur</li>
+      <li>Toillet</li>
+      <li>Koelkast</li>
+      <li>Meerlijnen en stootranden op maat gemaakt</li>
+      <li>En nog veel meer...</li>
+    <ul>
+  </div>
 
-
-
-</div>
-
-<div class="row">
-	<a name="nautisch" class="normal clear block"></a>
-	<div class="grid_12">
-		<h2>Nautische diensten</h2>
-	</div>
-</div>
-
-<div class="row">
-	<div class="grid_8">
-
-		<p>Voor het oplossen voor uw (tijdelijke) personeelstekort biedt ik u mijn "nautische diensten" aan.</p>
-		<p>Denk dan bijvoorbeeld aan:</p>
-		<ul class="square">
-			<li>Het opstarten in het hoogseizoen en/of winterklaar maken van uw jachthaven</li>
-			<li>Als nautische crew mee op uw evenementenschip</li>
-		</ul>
-
-		<p>Ik, Esli Njiokiktjien, ben in bezit van:</p>
-
-		<ul class="square">
-			<li>Dienstboekje Stuurman Binnenvaart</li>
-			<li>CCV Diploma aspirant schipper</li>
-			<li>Rijbewijs B en E</li>
-		</ul>
-		
-	</div>
-<!-- 	<div class="grid_6">
-		<h2>Partners</h2>
-		<ul class="square">
-			<li>Rederij de Tijd</li>
-			<li>Pure Liner</li>
-			<li>Working on waves</li>
-			<li>J&amp;J nautical projects</li>
-			<li>Plevier watersport</li>
-			<li>Jachthaven Doorenbosch</li>
-			<li>Jachthaven den Hoek</li>
-			<li>Boei26</li>
-		</ul>
-	</div> -->
-	<div class="grid_4">
-		<img src="fotos/dok88_nautisch_stropdas.jpg" class="max-image" />
-	</div>	
 
 
 </div>
 
-
 <div class="row">
-	<div class="grid_12">
-		<p>
-			Benieuwd wat DOK88 voor u kan beteken? Neem dan <a href="#contact">contact</a> met ons op.
-		</p>
-	</div>
+  <a name="nautisch" class="normal clear block"></a>
+  <div class="grid_12">
+    <h2>Nautische diensten</h2>
+  </div>
 </div>
 
 <div class="row">
-	<a name="transport" class="normal clear block"></a>
-	<div class="grid_12">
-		<hr />
-		<h1>Transport</h1>
+  <div class="grid_8">
 
-	</div>
+    <p>Voor het oplossen voor uw (tijdelijke) personeelstekort biedt ik u mijn "nautische diensten" aan.</p>
+    <p>Denk dan bijvoorbeeld aan:</p>
+    <ul class="square">
+      <li>Het opstarten in het hoogseizoen en/of winterklaar maken van uw jachthaven</li>
+      <li>Als nautische crew mee op uw evenementenschip</li>
+    </ul>
+
+    <p>Ik, Esli Njiokiktjien, ben in bezit van:</p>
+
+    <ul class="square">
+      <li>Dienstboekje matroos</li>
+      <li>CCV Diploma aspirant schipper</li>
+      <li>BHV</li>
+      <li>Rijbewijs B en E</li>
+    </ul>
+    
+  </div>
+<!--  <div class="grid_6">
+    <h2>Partners</h2>
+    <ul class="square">
+      <li>Rederij de Tijd</li>
+      <li>Pure Liner</li>
+      <li>Working on waves</li>
+      <li>J&amp;J nautical projects</li>
+      <li>Plevier watersport</li>
+      <li>Jachthaven Doorenbosch</li>
+      <li>Jachthaven den Hoek</li>
+      <li>Boei26</li>
+    </ul>
+  </div> -->
+  <div class="grid_4">
+    <img src="fotos/dok88_nautisch_stropdas.jpg" class="max-image" />
+  </div>  
+
+
+</div>
+
+
+<div class="row">
+  <div class="grid_12">
+    <p>
+      Benieuwd wat DOK88 voor u kan beteken? Neem dan <a href="#contact">contact</a> met ons op.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <a name="transport" class="normal clear block"></a>
+  <div class="grid_12">
+    <hr />
+    <h1>Transport</h1>
+
+  </div>
 </div>
 
 
 
 <div class="row">
-	<div class="grid_8">
-		<p>
-			Uw pleziervaartuig transporteren van de winterstalling naar de havenbox of vice versa? Of naar uw vakantiebestemming in Spanje? DOK88 heeft verschillende trailers, zo is het mogelijk om verschillende kielvormen te transporteren. Wij regelen het graag voor u!
-		</p>
-		<p>
-			DOK88 kan tot 3500 kg transporteren. Maar met onze relaties, is het tevens mogelijk om zwaarder transport te klaren.
-		</p>
-	</div>
+  <div class="grid_8">
+    <p>
+      Uw pleziervaartuig transporteren van de winterstalling naar de havenbox of vice versa? Of naar uw vakantiebestemming in Spanje? DOK88 heeft verschillende trailers, zo is het mogelijk om verschillende kielvormen te transporteren. Wij regelen het graag voor u!
+    </p>
+    <p>
+      DOK88 kan tot 3500 kg transporteren. Maar met onze relaties, is het tevens mogelijk om zwaarder transport te klaren.
+    </p>
+  </div>
 </div>
 
 <div class="row">
-	<div class="grid_6">
-		<table>
-			<tr>
-				<th class="first last" colspan="3">Transport tot 2250 kg</th>
-			</tr>
-			<tr class="odd">
-				<th>Opstarttarief</th>
-				<td>laad/los- en trailerstelkosten</td>
-				<td>&euro; 80,00</td>
-			</tr>
-			<tr class="even">
-				<th>Kilometertarief</th>
-				<td>&euro; Maarssen &gt; ophaaladres, en v.v.</td>
-				<td>&euro; 0,40 per km</td>
-			</tr>
-			<tr class="odd">
-				<th>Wachturen</th>
-				<td>bv. kraan nog niet aanwezig of andere vertragingen</td>
-				<td>&euro; 35,00</td>
-			</tr>
-		</table>
+  <div class="grid_8">
+    <table>
+      <tr>
+        <th class="first last" colspan="3">Transport tot 2250 kg</th>
+      </tr>
+      <tr class="odd">
+        <th>Opstarttarief</th>
+        <td>laad/los- en trailerstelkosten</td>
+        <td>&euro; 80,00</td>
+      </tr>
+      <tr class="even">
+        <th>Kilometertarief</th>
+        <td>&euro; Maarssen &gt; ophaaladres, en v.v.</td>
+        <td>&euro; 0,40 per km</td>
+      </tr>
+      <tr class="odd">
+        <th>Wachturen</th>
+        <td>bv. kraan nog niet aanwezig of andere vertragingen</td>
+        <td>&euro; 35,00</td>
+      </tr>
+    </table>
 
 
-	</div>
+  </div>
 
-	<div class="grid_6">
-
-		<div class="wmuSlider set4">
-		    <div class="wmuSliderWrapper">
-		        <article>
-		          <img src="fotos/dok88_transport4.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_transport5.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_transport6.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_transport7.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_transport8.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_transport9.jpg" />
-		        </article>        
-		    </div>
-
-		</div>
-		<script>$('.set4').wmuSlider({
-		animation: 'slide',
-		animationDuration: 800,
-		slideshow: true,
-		slideshowSpeed: 7000,
-		slideToStart: 0,
-		navigationControl: true,
-		paginationControl: true,
-		previousText: 'Vorige',
-		nextText: 'Volgende',
-		touch: false,
-		slide: 'article',
-		items: 1}
-			);</script>
-
-
-	</div>	
+  <div class="grid_4">
+    <img src="fotos/dok88_boot_aanhanger.jpg" class="max-image" />
+  </div>
 
 </div>
 
@@ -372,306 +454,430 @@ _gaq.push(['_trackPageview', location.pathname + location.search + location.hash
 
 
 <div class="row">
-	<a name="sloepverhuur" class="normal clear block"></a>
-	<div class="grid_12">
-		<hr />
-		<h1>Sloepverhuur</h1>
+  <a name="sloepverhuur" class="normal clear block"></a>
+  <div class="grid_12">
+    <hr />
+    <h1>Sloepverhuur</h1>
 
-		<p>DOK88 verzorgt sloepverhuur.</p> 
-		<p>Sloep MAX wordt geschipperd verhuurd en is voor maximaal 12 personen.</p>
-	</div>
+    <p>DOK88 verzorgt sloepverhuur.</p> 
+    <p>Sloep MAX wordt geschipperd verhuurd en is voor maximaal 12 personen.</p>
+  </div>
 </div>
 <div class="row">
-	<div class="grid_6">
-		<table>
-			<tr>
-				<th>Uren</th>
-				<th>Prijs incl. btw</th>
-				<th>Staffelkorting</th>
-			</tr>
-			<tr class="odd">
-				<td>1</td>
-				<td>&euro; 100,00</td>
-				<td></td>
-			</tr>
-			<tr class="even">
-				<td>2</td>
-				<td>&euro; 160,00</td>
-				<td></td>
-			</tr>
-			<tr class="odd">
-				<td>3</td>
-				<td>&euro; 220,00</td>
-				<td></td>
-			</tr>
-			<tr class="even">
-				<td>4</td>
-				<td><del>&euro; 280,00</del></td>
-				<td>&euro; 250,00</td>
-			</tr>
-			<tr class="odd">
-				<td>5</td>
-				<td><del>&euro; 340,00</del></td>
-				<td>&euro; 310,00</td>
-			</tr>
-			<tr class="even">
-				<td>6</td>
-				<td><del>&euro; 400,00</del></td>
-				<td>&euro; 370,00</td>
-			</tr>
-			<tr class="odd">
-				<td>7</td>
-				<td><del>&euro; 460,00</del></td>
-				<td>&euro; 400,00</td>
-			</tr>
-		</table>
-		<p>
-			<em>De prijzen zijn inclusief schipper, brandstof, bruggen- en sluisgelden.</em><br />
-			<em>Er van uit gaande dat u opstapt in Maarssen.</em><br />
-			<em>Elders opstappen kan uiteraard ook, maar dan worden er voorvaarkosten gerekend.</em><br />
-		</p>
-	</div>
+  <div class="grid_6">
+    <table>
+      <tr>
+        <th>Uren</th>
+        <th>Prijs incl. btw</th>
+        <th>Staffelkorting</th>
+      </tr>
+      <tr class="odd">
+        <td>1</td>
+        <td>&euro; 100,00</td>
+        <td></td>
+      </tr>
+      <tr class="even">
+        <td>2</td>
+        <td>&euro; 160,00</td>
+        <td></td>
+      </tr>
+      <tr class="odd">
+        <td>3</td>
+        <td>&euro; 220,00</td>
+        <td></td>
+      </tr>
+      <tr class="even">
+        <td>4</td>
+        <td><del>&euro; 280,00</del></td>
+        <td>&euro; 250,00</td>
+      </tr>
+      <tr class="odd">
+        <td>5</td>
+        <td><del>&euro; 340,00</del></td>
+        <td>&euro; 310,00</td>
+      </tr>
+      <tr class="even">
+        <td>6</td>
+        <td><del>&euro; 400,00</del></td>
+        <td>&euro; 370,00</td>
+      </tr>
+      <tr class="odd">
+        <td>7</td>
+        <td><del>&euro; 460,00</del></td>
+        <td>&euro; 400,00</td>
+      </tr>
+    </table>
+    <p>
+      <em>De prijzen zijn inclusief schipper, brandstof, bruggen- en sluisgelden.</em><br />
+      <em>Er van uit gaande dat u opstapt in Maarssen.</em><br />
+      <em>Elders opstappen kan uiteraard ook, maar dan worden er voorvaarkosten gerekend.</em><br />
+    </p>
+  </div>
 
-	<div class="grid_6">
+  <div class="grid_6">
 
-		<div class="wmuSlider set2">
-		    <div class="wmuSliderWrapper">
-		        <article>
-		          <img src="fotos/dok88_sloepverhuur_3607.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_sloepverhuur_3642.jpg" />
-		        </article>	        
-		    </div>
+    <div class="wmuSlider set2">
+        <div class="wmuSliderWrapper">
+            <article>
+              <img src="fotos/dok88_sloepverhuur_3607.jpg" />
+            </article>
+            <article>
+              <img src="fotos/dok88_sloepverhuur_3642.jpg" />
+            </article>          
+        </div>
 
-		</div>
-		<script>$('.set2').wmuSlider({
-		animation: 'slide',
-		animationDuration: 800,
-		slideshow: true,
-		slideshowSpeed: 7000,
-		slideToStart: 0,
-		navigationControl: true,
-		paginationControl: true,
-		previousText: 'Vorige',
-		nextText: 'Volgende',
-		touch: false,
-		slide: 'article',
-		items: 1}
-			);</script>
-
-
-	</div>	
+    </div>
+    <script>$('.set2').wmuSlider({
+    animation: 'slide',
+    animationDuration: 800,
+    slideshow: true,
+    slideshowSpeed: 7000,
+    slideToStart: 0,
+    navigationControl: true,
+    paginationControl: true,
+    previousText: 'Vorige',
+    nextText: 'Volgende',
+    touch: false,
+    slide: 'article',
+    items: 1}
+      );</script>
 
 
+  </div>  
 
 
-</div>	
+
+
+</div>  
 <div class="row">
-	<div class="grid_12">
-		<p>
-		Het is toegestaan om alle dranken en catering zelf te verzorgen, maar wij kunnen het ook voor u verzorgen. Wij maken graag een offerte voor u. 
-		Sloep MAX is een gerestaureerde en gemoderniseerde platbodem van omstreeks 1920. Deze sloep is uitermate geschikt voor een heerlijk dagje genieten op het water. Sloep MAX is voorzien van comfortabele kussens en biedt ruimte voor 12 personen (exclusief schipper). Eventueel is er mogelijkheid tot het creëren van een loungedek met plaats voor 6 personen. 
-		</p>
+  <div class="grid_12">
+    <p>
+    Het is toegestaan om alle dranken en catering zelf te verzorgen, maar wij kunnen het ook voor u verzorgen. Wij maken graag een offerte voor u. 
+    Sloep MAX is een gerestaureerde en gemoderniseerde platbodem van omstreeks 1920. Deze sloep is uitermate geschikt voor een heerlijk dagje genieten op het water. Sloep MAX is voorzien van comfortabele kussens en biedt ruimte voor 12 personen (exclusief schipper). Eventueel is er mogelijkheid tot het creëren van een loungedek met plaats voor 6 personen. 
+    </p>
 
-		<p>
-		Met sloep MAX zult u alle mooie landgoederen zien langs de rivier de Vecht. De sloep past perfect in het vaargebied. Door zijn geringe doorvaarhoogte kan hij onder bijna alle bruggen door. Hierdoor zijn we niet afhankelijk van brugtijden.
-		</p>
+    <p>
+    Met sloep MAX zult u alle mooie landgoederen zien langs de rivier de Vecht. De sloep past perfect in het vaargebied. Door zijn geringe doorvaarhoogte kan hij onder bijna alle bruggen door. Hierdoor zijn we niet afhankelijk van brugtijden.
+    </p>
 
-		<h3>Diverse arrangementen</h3>
-		<p>DOK88 organiseert voor u en uw gezelschap een actieve dag op de Loosdrechtse Plassen met wakeboard les.</p>
+    <h3>Diverse arrangementen</h3>
+    <p>DOK88 organiseert voor u en uw gezelschap een actieve dag op de Loosdrechtse Plassen met wakeboard les.</p>
 
 
-	</div>
+  </div>
 </div>
 
 
 <div class="row">
-	<a name="winterstalling" class="normal clear block"></a>
-	<div class="grid_12">
-		<hr />
-		<h1>Winterstalling</h1>
+  <a name="winterstalling" class="normal clear block"></a>
+  <div class="grid_12">
+    <hr />
+    <h1>Winterstalling</h1>
 
-	</div>
+  </div>
 </div>
 <div class="row">
-	<div class="grid_6">
-		<table>
-			<tr>
-				<th class="first last" colspan="3">Overdekte winterstalling <strong>ALL INCLUSIVE</strong></th>
-			</tr>			
-			<tr class="odd">
-				<td>
-					<p><strong>Stalling per m<sup>2</sup> (l.o.a. x b.o.a.)</strong></p>
+  <div class="grid_6">
+<style>
+.label {
+  float: left; width: 30%; text-align: right; margin-right: 8px; 
+}
 
-					<p>Het tarief is inclusief:</p>
-					<ul class="circle">
-						<li>21% btw</li>
-						<li>Schoonspuiten van onderwaterschip (normale vervuiling)</li>
-						<li>Transport van en naar stalling (binnen een straal van 15 km om Maarssen en tot 2250 kg)</li>
-						<li>Huur bootbok tot 9 meter bootlengte</li>
-						<li>Milieutoeslag</li>
-					</ul>
-				</td>
-				<td class="euro"><nobr>&euro; 49,95</nobr></td>
-			</tr>		
-		</table>
+.bold {
+  font-weight: bold;
+}
 
 
+.small {
+  width: 50px;
+}
 
-	</div>
+.orderButton {
+  text-align: center;
+  margin-top: 9px;
+  margin-bottom: 5px;
+  clear: both;
+}
 
-	<div class="grid_6">
+.error {
+  color:red;
+}
 
-		<div class="wmuSlider set3">
-		    <div class="wmuSliderWrapper">
-		        <article>
-		          <img src="fotos/dok88_winterstalling_17.jpg" />
-		        </article>
-		        <article>
-		          <img src="fotos/dok88_winterstalling_20.jpg" />
-		        </article>	        
-		    </div>
-
-		</div>
-		<script>$('.set3').wmuSlider({
-		animation: 'slide',
-		animationDuration: 800,
-		slideshow: true,
-		slideshowSpeed: 7000,
-		slideToStart: 0,
-		navigationControl: true,
-		paginationControl: true,
-		previousText: 'Vorige',
-		nextText: 'Volgende',
-		touch: false,
-		slide: 'article',
-		items: 1}
-			);</script>
+.thanksalot {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+</style>
 
 
-	</div>	
-</div>	
+  <form id="winterform" method="post" action="">
+    <input type="hidden" name="totalcalc" id="totalcalc" value="" />
+    <table>
+      <tr>
+        <th class="first last" colspan="3">Overdekte winterstalling <strong>ALL INCLUSIVE <sup>*</sup></strong></th>
+      </tr>     
+      <tr class="odd">
+        <td>
+          
+
+
+      <div>
+      <span class="label bold">Lengte</span>
+      <input type="text" name="length" class="small" id="loa" data-a-dec="," data-a-sep="."> meter
+      </div>
+
+      <div>
+      <span class="label bold">Breedte</span>
+      <input type="text" name="width" class="small" id="boa" data-a-dec="," data-a-sep="."> meter
+      </div>
+
+      <br />
+
+      <div>
+        <input type="checkbox" name="wintercheck" id="wintercheck" value="ja" />
+        <span class="label2">Winterklaar maken</span>
+      </div>
+      
+
+      <div>
+        <input type="checkbox" name="accucheck" id="accucheck" value="ja" />
+        <span class="label2">Accuservice</span>
+
+      </div>
+            <br />
+      <div id="accunum" style="display:none;">
+      <span class="label bold">Aantal accu&rsquo;s</span>
+      <input type="text" class="small" name="accus" id="accus" data-a-dec="," data-a-sep=".">
+      </div>
+      
+      <br />
+
+
+      
+      <div class="orderButton">
+        <button class="cancel" id="clickme" style="display:none;">Offerte aanvragen!</button>
+      </div>
+
+        </td>
+        <td class="euro"><nobr><span>&euro; </span><span id="total">0,00</span></nobr></td>
+      </tr>   
+      <tr class="odd" id="contactform" style="display:none;">
+        <td colspan="2">
+
+      <div id="orderfields">
+
+        <div>
+          <span class="label">Naam *</span>
+          <input type="text" name="name">
+        </div>
+
+        <div>
+          <span class="label">Adres *</span>
+          <input type="text" name="address">
+        </div>
+
+        <div>
+          <span class="label">Postcode *</span>
+          <input type="text" name="postcode">
+        </div>        
+
+        <div>
+          <span class="label">E-mailadres *</span>
+          <input type="text" id="email" name="email">
+        </div>
+
+        <div class="orderButton">
+         <input class="submit" type="submit" id="sendit" value="Versturen">
+        </div>
+
+      </div>
+
+  </tr>
+
+
+
+
+    </table>
+
+    <p><sup>*</sup> Prijs is inclusief: 2x hijskosten, schoonspuiten van onderwaterschip (normale vervuiling), transport van en naar stalling en huur bootbok.</p>
+
+
+  </form>
+
+
+
+
+
+  </div>
+
+  <div class="grid_6">
+
+    <div class="wmuSlider set3">
+        <div class="wmuSliderWrapper">
+            <article>
+              <img src="fotos/dok88_winterstalling_17.jpg" />
+            </article>
+            <article>
+              <img src="fotos/dok88_winterstalling_20.jpg" />
+            </article>          
+        </div>
+
+    </div>
+    <script>$('.set3').wmuSlider({
+    animation: 'slide',
+    animationDuration: 800,
+    slideshow: true,
+    slideshowSpeed: 7000,
+    slideToStart: 0,
+    navigationControl: true,
+    paginationControl: true,
+    previousText: 'Vorige',
+    nextText: 'Volgende',
+    touch: false,
+    slide: 'article',
+    items: 1}
+      );</script>
+
+
+  </div>  
+</div>  
 
 <div class="row">
-	<div class="grid_6">
-		<table>
-			<tr>
-				<th class="first last" colspan="3">Winterklaar maken</th>
-			</tr>			
-			<tr class="odd">
-				<td>
-					Inboard motoren incl. benodigdheden, vanaf
-				</td>
-				<td class="euro"><nobr>&euro; 75,00</nobr></td>
-			</tr>	
-			<tr class="even">
-				<td>
-					Drinkwatersystemen incl. benodigdheden, vanaf
-				</td>
-				<td class="euro"><nobr>&euro; 50,00</nobr></td>
-			</tr>	
-		</table>
+  <div class="grid_6">
+    <table>
+      <tr>
+        <th class="first last" colspan="3">Winterklaar maken</th>
+      </tr>     
+      <tr class="odd">
+        <td>
+          Inboard motoren incl. benodigdheden, vanaf
+        </td>
+        <td class="euro"><nobr>&euro; 75,00</nobr></td>
+      </tr> 
+      <tr class="even">
+        <td>
+          Drinkwatersystemen incl. benodigdheden, vanaf
+        </td>
+        <td class="euro"><nobr>&euro; 50,00</nobr></td>
+      </tr> 
+    </table>
 
-		<p>
-			Graag verzorgen wij in de winterstalling:
-		</p>
-
-
-		<table>
-			<tr class="odd">
-				<td>
-					Accu service (regelmatig opladen van de accu en opslaan), per stuk
-				</td>
-				<td class="euro"><nobr>&euro; 25,00</nobr></td>
-			</tr>	
-			<tr class="even">
-				<td>
-					Service beurten aan motoren, vanaf
-				</td>
-				<td class="euro"><nobr>&euro; 175,00</nobr></td>
-			</tr>
-			<tr class="odd">
-				<td>
-					Polyester polijsten en poetsen. Per feet. incl. materiaal, vanaf
-				</td>
-				<td class="euro"><nobr>&euro; 14,00</nobr></td>
-			</tr>	
-			<tr class="even">
-				<td>
-					Antifouling aanbrengen. Per meter scheepslengte, incl. materiaal, vanaf
-				</td>
-				<td class="euro"><nobr>&euro; 55,00</nobr></td>
-			</tr>
-			<tr class="odd">
-				<td>
-					Installatie van randapparatuur
-				</td>
-				<td class="euro"><nobr></nobr></td>
-			</tr>
-			<tr class="even">
-				<td>
-					Extra <a href="#transport">transportservice</a>
-				</td>
-				<td class="euro"><nobr></nobr></td>
-			</tr>			
-		</table>
-		Alle genoemde prijzen zijn incl. 21% BTW.
-	</div>	
-<!-- 	<div class="grid_6">
-		<img src="fotos/dok88_winterstalling_stapel2.jpg" class="max-image" />
-	</div>	 -->
+    <p>
+      Graag verzorgen wij in de winterstalling:
+    </p>
 
 
-</div>	
+    <table>
+      <tr class="odd">
+        <td>
+          Accu service (regelmatig opladen van de accu en opslaan), per stuk
+        </td>
+        <td class="euro"><nobr>&euro; 25,00</nobr></td>
+      </tr> 
+      <tr class="even">
+        <td>
+          Service beurten aan motoren, vanaf
+        </td>
+        <td class="euro"><nobr>&euro; 175,00</nobr></td>
+      </tr>
+      <tr class="odd">
+        <td>
+          Polyester polijsten en poetsen. Per feet. incl. materiaal, vanaf
+        </td>
+        <td class="euro"><nobr>&euro; 14,00</nobr></td>
+      </tr> 
+      <tr class="even">
+        <td>
+          Antifouling aanbrengen. Per meter scheepslengte, incl. materiaal, vanaf
+        </td>
+        <td class="euro"><nobr>&euro; 55,00</nobr></td>
+      </tr>
+      <tr class="odd">
+        <td>
+          Installatie van randapparatuur
+        </td>
+        <td class="euro"><nobr></nobr></td>
+      </tr>
+      <tr class="even">
+        <td>
+          Extra <a href="#transport">transportservice</a>
+        </td>
+        <td class="euro"><nobr></nobr></td>
+      </tr>     
+    </table>
+    Alle genoemde prijzen zijn incl. 21% BTW.
+  </div>  
+<!--  <div class="grid_6">
+    <img src="fotos/dok88_winterstalling_stapel2.jpg" class="max-image" />
+  </div>   -->
 
 
-<div class="row">
-	<a name="contact" class="normal clear block"></a>
-	<div class="grid_12">
-		<hr />
-		<h1>Contact</h1>
-	</div>
-</div>	
+</div>  
+
 
 <div class="row">
-	<div class="grid_6">
+  <a name="contact" class="normal clear block"></a>
+  <div class="grid_12">
+    <hr />
+    <h1>Contact</h1>
+  </div>
+</div>  
 
-		<h3>Esli Njiokiktjien</h3>
+<div class="row">
+  <div class="grid_6">
 
-		<table class="contact">
-		<tr>
-			<td><strong class="water">W</strong>ebsite</td>
-			<td><a href="http://www.dok88.nl">www.dok88.nl</a></td>
-		</tr>
+    <h3>Esli Njiokiktjien</h3>
 
-		<tr>
-			<td><strong class="water">A</strong>dres</td>
-			<td>Oostkanaaldijk 6<br />3603 CZ MAARSSEN</td>
-		</tr>
+    <table class="contact">
+    <tr>
+      <td><strong class="water">W</strong>ebsite</td>
+      <td><a href="http://www.dok88.nl">dok88.nl</a></td>
+    </tr>
 
-		<tr>
-			<td><strong class="water">T</strong>elefoon</td>
-			<td>06-40111855</td>
-		</tr>
+    <tr>
+      <td><strong class="water">A</strong>dres</td>
+      <td>Zandpad 6 w.s.<br />3601 AN MAARSSEN</td>
+    </tr>
 
-		<tr>
-			<td><strong class="water">E</strong>-mail</td>
-			<td><a href="mailto:info@dok88.nl">info@dok88.nl</a></td>
-		</tr>
+    <tr>
+      <td><strong class="water">T</strong>elefoon</td>
+      <td>06-40111855</td>
+    </tr>
 
-		<tr>
-			<td><strong class="water">R</strong>ekeningnr.</td>
-			<td>NL83INGB0004802548</td>
-		</tr>
+    <tr>
+      <td><strong class="water">E</strong>-mail</td>
+      <td><a href="mailto:info@dok88.nl">info@dok88.nl</a></td>
+    </tr>
 
-		</table>
-	</div>
-	<div class="grid_4 offset_2">
-		<img src="fotos/dok88_elsi.jpg" class="max-image" />
+    <tr>
+      <td><strong class="water">R</strong>ekeningnr.</td>
+      <td>ING: 4802548</td>
+    </tr>
 
-	</div>
+    </table>
+  </div>
+  <div class="grid_4 offset_2">
+    <img src="fotos/dok88_elsi.jpg" class="max-image" />
+
+  </div>
 </div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.leanderweb.nl/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//www.leanderweb.nl/piwik/piwik.php?idsite=6" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 
 
 </body>
